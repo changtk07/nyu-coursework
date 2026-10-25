@@ -1,6 +1,6 @@
 SOURCES := src/main.cpp
-OBJECTS := build/*.o
-DEPENDS := build/*.d
+OBJECTS := $(patsubst src/%.cpp,build/%.o,$(SOURCES))
+DEPENDS := $(patsubst src/%.cpp,build/%.d,$(SOURCES))
 
 WARNING := -Wall -Wextra
 STD := -std=c++11
@@ -17,5 +17,8 @@ build/lab3: $(OBJECTS)
 
 -include $(DEPENDS)
 
-build/%.o: src/%.cpp Makefile
+build/%.o: src/%.cpp Makefile | build
 	$(CXX) $(WARNING) $(STD) $(CXXFLAGS) -MMD -MP -c $< -o $@
+
+build:
+	mkdir -p $@

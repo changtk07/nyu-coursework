@@ -9,7 +9,7 @@ Use `Makefile` to build the code:
 $ make
 ```
 
-then you can see the executable `lab3` under the same directory.
+then you can see the executable `lab3` under the `build` directory.
 
 
 ## How to run
@@ -17,7 +17,7 @@ Follow the lab requirement, the program has four options and one non-option argu
 
 A typical way to run the program is,
 ```
-$ ./lab3 [--df <discount_factor>] [--tol <tolerance>] [--iter <iterations>] [--min] <input_file>
+$ build/lab3 [--df <discount_factor>] [--tol <tolerance>] [--iter <iterations>] [--min] <input_file>
 ```
 
 ### options

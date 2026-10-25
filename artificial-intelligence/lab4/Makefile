@@ -16,5 +16,8 @@ build/kmeans: build/kmeans.o
 
 -include build/knn.d build/kmeans.d
 
-build/%.o: src/%.cpp Makefile
+build/%.o: src/%.cpp Makefile | build
 	$(CXX) $(WARNING) $(STD) $(CXXFLAGS) -MMD -MP -c $< -o $@
+
+build:
+	mkdir -p $@

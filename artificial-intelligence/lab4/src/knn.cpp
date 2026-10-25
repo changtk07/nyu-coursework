@@ -5,6 +5,7 @@
 #include <unordered_map>
 #include <algorithm>
 #include <climits>
+#include <limits>
 #include <getopt.h>
 
 #include "utility.hpp"
